@@ -2,20 +2,7 @@ from pymongo import MongoClient
 import pandas as pd
 
 
-mongo_uri     = "mongodb+srv://Jeffflaj:Koukouda16@jeff.0lid4ok.mongodb.net/?retryWrites=true&w=majority"
-client  = MongoClient(mongo_uri)
-# db      = client["urban_data_silver"] #sliver db
-db      = client["urban_data_gold"] #gold db
 
-
-# collection = db["silver_logement"]
-collection = db["logement"]
-
-
-## Load the cleaned data
-data_to_load = 'C:\\Users\\emili\\Desktop\\EFREI\\Projet_UrbanData\\data\\gold\\AllFoncier_gold.csv'
-df = pd.read_csv(data_to_load, sep=",")  
-# print(df.head())
 
 
 # Prepare DataFrame for MongoDB insertion
@@ -40,4 +27,5 @@ df_mongo = pd.DataFrame({
 print(db.list_collection_names())
 
 # print(collection.find_one())  # Display first document
+
 
